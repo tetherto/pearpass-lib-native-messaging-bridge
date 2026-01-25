@@ -30,6 +30,7 @@ const TIMEOUTS = Object.freeze({
 
 // Error messages for each status
 const STATUS_MESSAGES = Object.freeze({
+  [DESKTOP_APP_STATUS.CONNECTED]: 'PearPass desktop app connected',
   [DESKTOP_APP_STATUS.NOT_RUNNING]: 'PearPass desktop app is not running',
   [DESKTOP_APP_STATUS.INTEGRATION_DISABLED]:
     'Browser extension integration is disabled in PearPass desktop app. Please enable it in Settings > Privacy',
