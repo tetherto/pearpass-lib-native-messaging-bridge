@@ -42,6 +42,9 @@ export const COMMAND_DEFINITIONS = [
   { id: 1023, name: 'getDecryptionKey' },
   { id: 1024, name: 'decryptVaultKey' },
 
+  // Extension pairing
+  { id: 1033, name: 'checkExtensionPairingStatus' },
+
   // Native Messaging secure channel (pairing/handshake)
   { id: 1100, name: 'nmGetAppIdentity' },
   { id: 1102, name: 'nmBeginHandshake' },
