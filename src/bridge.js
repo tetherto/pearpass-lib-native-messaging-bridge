@@ -24,8 +24,8 @@ const DESKTOP_APP_STATUS = Object.freeze({
 
 // Timeout constants (in milliseconds)
 const TIMEOUTS = Object.freeze({
-  IPC_CONNECTION: 5000, // 5 seconds to establish IPC connection
-  IPC_CALL: 5000 // 5 seconds for IPC method calls
+  IPC_CONNECTION: 45000, // 45 seconds to establish IPC connection
+  IPC_CALL: 45000 // 45 seconds for IPC method calls
 })
 
 // Error messages for each status
