@@ -51,6 +51,7 @@ export const COMMAND_DEFINITIONS = [
   { id: 1103, name: 'nmFinishHandshake' },
   { id: 1104, name: 'nmSecureRequest' },
   { id: 1105, name: 'nmCloseSession' },
+  { id: 1106, name: 'nmConfirmPairing' },
 
   // Pairing and misc commands
   { id: 1025, name: 'pairActiveVault' },
