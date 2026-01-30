@@ -45,6 +45,12 @@ export const COMMAND_DEFINITIONS = [
   // Extension pairing
   { id: 1033, name: 'checkExtensionPairingStatus' },
 
+  //Auto lock commands
+  { id: 1035, name: 'getAutoLockSettings' },
+  { id: 1036, name: 'setAutoLockTimeout' },
+  { id: 1037, name: 'setAutoLockEnabled' },
+  { id: 1038, name: 'resetTimer' },
+
   // Native Messaging secure channel (pairing/handshake)
   { id: 1100, name: 'nmGetAppIdentity' },
   { id: 1102, name: 'nmBeginHandshake' },
