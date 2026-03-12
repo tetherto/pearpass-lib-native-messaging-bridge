@@ -59,6 +59,12 @@ export const COMMAND_DEFINITIONS = [
   { id: 1105, name: 'nmCloseSession' },
   { id: 1106, name: 'nmConfirmPairing' },
 
+  // OTP commands
+  { id: 1040, name: 'generateOtpCodesByIds' },
+  { id: 1041, name: 'generateHotpNext' },
+  { id: 1042, name: 'addOtpToRecord' },
+  { id: 1043, name: 'removeOtpFromRecord' },
+
   // Pairing and misc commands
   { id: 1025, name: 'pairActiveVault' },
   { id: 1026, name: 'initListener' },
