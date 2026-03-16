@@ -1,12 +1,13 @@
 import os from 'bare-os'
 import path from 'bare-path'
 
-const SOCKET_DIR_NAME = 'pearpass'
+import { IPC_SOCKET_DIR_NAME } from 'pearpass-lib-constants'
 
 /**
  * Returns cross-platform IPC path.
- * Uses Pear.config.pearDir so both the desktop app and the bridge
- * resolve to the same path, and stays short enough for the 104-byte
+ * Uses os.homedir() so both the desktop app (Electron/Node) and the
+ * bridge (Pear/bare-os) resolve to the same path without depending
+ * on Pear.config.pearDir, and stays short enough for the 104-byte
  * macOS Unix-socket limit.
  * @param {string} socketName
  * @returns {string}
@@ -16,5 +17,5 @@ export const getIpcPath = (socketName) => {
     return `\\\\?\\pipe\\${socketName}`
   }
 
-  return path.join(Pear.config.pearDir, SOCKET_DIR_NAME, `${socketName}.sock`)
+  return path.join(os.homedir(), IPC_SOCKET_DIR_NAME, `${socketName}.sock`)
 }
