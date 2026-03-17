@@ -1,7 +1,7 @@
 import os from 'bare-os'
 import path from 'bare-path'
 
-import { IPC_SOCKET_DIR_NAME } from 'pearpass-lib-constants'
+import { IPC_SOCKET_DIR_NAME } from '@tetherto/pearpass-lib-constants'
 
 /**
  * Returns cross-platform IPC path.
