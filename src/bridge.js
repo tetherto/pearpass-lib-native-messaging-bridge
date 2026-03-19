@@ -2,16 +2,15 @@
 
 // Native messaging host - bridges browser extension to PearPass desktop app via IPC
 
-import process from 'bare-process'
 import IPC from 'pear-ipc'
 
 import {
   COMMAND_DEFINITIONS,
   isValidCommand
-} from './constants/commandDefinitions'
-import { NativeMessagingHandler } from './nativeMessagingHandler'
-import { getIpcPath } from './utils/getIpcPath'
-import { log } from './utils/log'
+} from './constants/commandDefinitions.js'
+import { NativeMessagingHandler } from './nativeMessagingHandler.js'
+import { getIpcPath } from './utils/getIpcPath.js'
+import { log } from './utils/log.js'
 
 // Desktop app status constants
 const DESKTOP_APP_STATUS = Object.freeze({
@@ -417,5 +416,5 @@ log('INFO', 'About to start host...')
 host.start().catch((error) => {
   log('INFO', 'Failed to start host: ' + error.message)
   log('INFO', 'Stack trace: ' + error.stack)
-  Pear.exit()
+  process.exit(1)
 })

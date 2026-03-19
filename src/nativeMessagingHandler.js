@@ -1,13 +1,11 @@
 import EventEmitter from 'events'
 
-import process from 'bare-process'
-
 import {
   wrapMessage,
   unwrapMessage,
   isWrappedMessage
-} from './nativeMessagingProtocol'
-import { log } from './utils/log'
+} from './nativeMessagingProtocol.js'
+import { log } from './utils/log.js'
 
 // Constants
 const MESSAGE_SIZE_LIMIT = 1024 * 1024 // 1MB

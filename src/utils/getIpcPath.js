@@ -1,5 +1,5 @@
-import os from 'bare-os'
-import path from 'bare-path'
+import os from 'os'
+import path from 'path'
 
 import { IPC_SOCKET_DIR_NAME } from '@tetherto/pearpass-lib-constants'
 

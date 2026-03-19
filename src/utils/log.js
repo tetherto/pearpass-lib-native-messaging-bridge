@@ -1,8 +1,8 @@
-/** @typedef {import('pear-interface')} */ /* global Pear */
-import fs from 'bare-fs'
-import path from 'bare-path'
+import fs from 'fs'
+import os from 'os'
+import path from 'path'
 
-import { DEBUG_MODE } from '../constants/debugMode'
+import { DEBUG_MODE } from '../constants/debugMode.js'
 
 /**
  * Dedicated logger for native messaging bridge
@@ -14,7 +14,7 @@ export const log = (level, message) => {
   if (!DEBUG_MODE) return
 
   try {
-    const logDir = path.join(Pear.config.storage, 'logs')
+    const logDir = path.join(os.homedir(), '.pearpass', 'logs')
     const logFile = path.join(logDir, 'native-messaging-bridge.log')
 
     // Create logs directory if it doesn't exist

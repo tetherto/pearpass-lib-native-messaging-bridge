@@ -1,1 +1,1 @@
-import './src/bridge'
+import './src/bridge.js'
