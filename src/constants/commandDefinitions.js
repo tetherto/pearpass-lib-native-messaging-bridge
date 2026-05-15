@@ -70,7 +70,10 @@ export const COMMAND_DEFINITIONS = [
   { id: 1025, name: 'pairActiveVault' },
   { id: 1026, name: 'initListener' },
   { id: 1027, name: 'closeAllInstances' },
-  { id: 1028, name: 'cancelPairActiveVault' }
+  { id: 1028, name: 'cancelPairActiveVault' },
+
+  // Server-pushed events (fire-and-forget, server -> bridge)
+  { id: 1045, name: 'onVaultAccessRevoked', send: true }
 ]
 
 /** @type {string[]} */

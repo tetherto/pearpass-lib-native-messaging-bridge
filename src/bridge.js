@@ -124,6 +124,36 @@ class NativeMessagingHost {
   }
 
   /**
+   * Build the inbound-method api for the pear-ipc client. pear-ipc's client
+   * only auto-registers OUTBOUND methods; for server-pushed send-methods we
+   * must hand-wire the underlying tiny-buffer-rpc method's _onrequest so that
+   * inbound payloads reach us. The forwarder relays the payload to the
+   * extension as a `{ event, data }` native-messaging push, which the
+   * extension background already routes into pearpassVaultClient.emit().
+   *
+   * @returns {Object}
+   */
+  createIpcInboundApi() {
+    const forward = (event, data) => {
+      try {
+        this.handler.send({ event, data })
+      } catch (err) {
+        log('ERROR', `Failed to forward ${event} to extension: ${err.message}`)
+      }
+    }
+
+    return {
+      onVaultAccessRevoked: (method) => {
+        method._onrequest = (data) => {
+          forward('vault-access-revoked', data)
+        }
+        // Inbound-only; expose a no-op so any accidental caller doesn't crash.
+        return () => {}
+      }
+    }
+  }
+
+  /**
    * @returns {Promise<void>}
    */
   async connectToIPC() {
@@ -136,7 +166,8 @@ class NativeMessagingHost {
         socketPath: this.socketPath,
         connect: true,
         connectTimeout: TIMEOUTS.IPC_CONNECTION,
-        methods: COMMAND_DEFINITIONS
+        methods: COMMAND_DEFINITIONS,
+        api: this.createIpcInboundApi()
       })
 
       // Wait for connection with timeout
