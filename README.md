@@ -1,3 +1,6 @@
+> [!WARNING]
+> 🍐 PearPass is currently paused from active development, so please use at your own caution until further notice.
+
 # pearpass-lib-native-messaging-bridge
 
 Native messaging bridge for PearPass browser extension. This library enables secure communication between the PearPass browser extension and the PearPass desktop application using Chrome's Native Messaging protocol and IPC (Inter-Process Communication).
