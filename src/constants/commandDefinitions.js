@@ -54,6 +54,10 @@ export const COMMAND_DEFINITIONS = [
   { id: 1037, name: 'setAutoLockEnabled' },
   { id: 1038, name: 'resetTimer' },
 
+  // Clipboard commands
+  { id: 1049, name: 'getClipboardClearTimeout' },
+  { id: 1050, name: 'setClipboardClearTimeout' },
+
   // Native Messaging secure channel (pairing/handshake)
   { id: 1100, name: 'nmGetAppIdentity' },
   { id: 1102, name: 'nmBeginHandshake' },
